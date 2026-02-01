@@ -1,68 +1,72 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大头的 AI 深度内参</title>
+    <title>大头的 AI 深度内参 | 2026.02.01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309', light: '#fde68a', DEFAULT: '#d4af37', dark: '#aa8c2c', metallic: '#c5a028' },
+                        dark: { 900: '#050505', 800: '#0a0a0a', 700: '#121212', 600: '#1a1a1a', 500: '#262626' }
+                    },
+                    fontFamily: { serif: ['"Noto Serif SC"', 'serif'], sans: ['Inter', 'sans-serif'] },
+                    animation: { 'pulse-gold': 'pulse-gold 3s cubic-bezier(0.4, 0, 0.6, 1) infinite', 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' },
+                    keyframes: {
+                        'pulse-gold': { '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(212, 175, 55, 0.5)' }, '50%': { opacity: .8, boxShadow: '0 0 40px rgba(212, 175, 55, 0.8)' } },
+                        fadeInUp: { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root { --gold: #d4af37; --bg: #0a0a0a; --card-bg: #161616; }
-        body { background: var(--bg); color: #fff; font-family: 'PingFang SC', sans-serif; margin: 0; padding: 40px 20px; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        
-        /* 顶部设计 */
-        .header { border-left: 4px solid var(--gold); padding-left: 20px; margin-bottom: 40px; position: relative; }
-        .header h1 { font-size: 2.5em; margin: 0; letter-spacing: 4px; color: var(--gold); font-weight: 800; }
-        .header .subtitle { color: #666; font-size: 0.9em; text-transform: uppercase; letter-spacing: 2px; }
-        .live-tag { position: absolute; right: 0; top: 10px; background: rgba(212,175,55,0.1); color: var(--gold); padding: 4px 12px; border-radius: 20px; font-size: 0.8em; border: 1px solid var(--gold); }
-
-        /* 核心摘要区 */
-        .summary-box { background: linear-gradient(145deg, #1a1a1a, #111); border: 1px solid rgba(212,175,55,0.3); padding: 35px; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .summary-title { color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: 25px; font-weight: bold; font-size: 1.2em; }
-        
-        /* AI 内容注入点样式 */
-        .news-content { line-height: 2; color: #ccc; white-space: pre-wrap; font-size: 1.1em; }
-        b, strong { color: var(--gold); font-weight: bold; }
-
-        /* 分类装饰区 */
-        .grid-header { border-bottom: 1px solid #222; padding-bottom: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .news-card { background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid #222; transition: 0.3s; }
-        .news-card:hover { border-color: var(--gold); }
-        .card-tag { background: var(--gold); color: #000; padding: 2px 8px; font-size: 0.7em; font-weight: bold; border-radius: 4px; margin-bottom: 15px; display: inline-block; }
+        body { background-color: #050505; background-image: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%); }
+        .gold-gradient-text { background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #fbbf24 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .glass-card { background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(212, 175, 55, 0.15); }
+        .gold-border-gradient { position: relative; background: linear-gradient(135deg, #121212, #0a0a0a); }
+        .gold-border-gradient::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, #d4af37, #b45309, #d4af37); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+        .news-item { border-left: 2px solid rgba(212, 175, 55, 0.2); }
+        .grid-pattern { background-image: linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="subtitle">Elite Market Intelligence & Strategic Insights</div>
-            <h1>大头的 <span style="color:#fff">AI 深度内参</span></h1>
-            <div class="live-tag">● LIVE UPDATE</div>
-        </div>
-
-        <div class="summary-box">
-            <div class="summary-title">⚡ 今日核心摘要</div>
-            <div class="news-content">
-</div>
-        </div>
-
-        <div class="grid-header">
-            <div style="color:var(--gold); font-size: 0.9em;">── 深度分类</div>
-            <div style="color:#444; font-size: 0.7em; text-transform: uppercase;">Categories</div>
-        </div>
-        <div class="news-grid">
-            <div class="news-card">
-                <div class="card-tag">大模型动态</div>
-                <div style="color:#666; font-size:0.8em; margin-bottom: 10px;">LLMs & Foundation Models</div>
-                <div style="color:var(--gold); font-weight: bold;">Gemini 2.5 Pro "Deep Think" 击败 o3</div>
-                <p style="color:#888; font-size:0.9em;">Google 发布增强型推理模式，采用并行计算技术，在多模态理解基准上首次超越 OpenAI o3 系列。</p>
+<body class="text-gray-300 font-sans antialiased min-h-screen grid-pattern">
+    <header class="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="space-y-2 animate-fade-in-up">
+                <div class="flex items-center gap-3 mb-2"><div class="w-1 h-8 bg-gold-500 rounded-full"></div><span class="text-gold-500 text-sm tracking-[0.3em] uppercase font-semibold">Daily Intelligence</span></div>
+                <h1 class="text-4xl md:text-6xl font-serif font-black text-white">大头的 <span class="gold-gradient-text">AI 深度内参</span></h1>
             </div>
-            <div class="news-card">
-                <div class="card-tag">AI 硬件</div>
-                <div style="color:#666; font-size:0.8em; margin-bottom: 10px;">Chips & Robotics</div>
-                <div style="color:var(--gold); font-weight: bold;">Vera Rubin 平台正式进入量产</div>
-                <p style="color:#888; font-size:0.9em;">黄仁勋在 CES 2026 宣布下一代 AI 超级芯片平台开始生产，包含 6 款新芯片，性能较前代翻倍。</p>
-            </div>
+            <div class="px-4 py-2 glass-card rounded-full flex items-center gap-2"><div class="w-2 h-2 bg-gold-500 rounded-full animate-pulse-gold"></div><span class="text-gold-400 text-xs font-mono">LIVE UPDATE</span></div>
         </div>
-    </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-20 space-y-12">
+        <section class="animate-fade-in-up" style="animation-delay: 0.3s">
+            <div class="gold-border-gradient rounded-2xl p-8 md:p-10">
+                <div class="flex items-center gap-3 mb-6"><h2 class="text-2xl font-serif font-bold text-white">今日核心摘要</h2></div>
+                <div class="space-y-4 text-lg md:text-xl leading-relaxed font-light text-gray-300">
+                    </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-fade-in-up" style="animation-delay: 0.5s">
+            <article class="glass-card rounded-2xl p-6">
+                <h4 class="text-xl font-bold text-white mb-4">大模型动态</h4>
+                <div class="news-item pl-4 py-2"><p class="text-sm text-gray-500">正在分析最新模型演进...</p></div>
+            </article>
+            <article class="glass-card rounded-2xl p-6">
+                <h4 class="text-xl font-bold text-white mb-4">AI 硬件</h4>
+                <div class="news-item pl-4 py-2"><p class="text-sm text-gray-500">正在追踪底层算力突破...</p></div>
+            </article>
+        </section>
+    </main>
 </body>
 </html>
+</body>
+</html>
+
