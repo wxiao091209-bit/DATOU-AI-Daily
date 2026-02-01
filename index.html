@@ -6,38 +6,47 @@
     <title>大头的 AI 深度内参</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #050505; color: #d1d5db; }
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #fbbf24 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .glass-card {
-            background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-        }
-        /* 强制美化机器人投递的内容 */
-        #ai-content p { margin-bottom: 1rem; padding-left: 1rem; border-left: 2px solid #d4af37; }
-        #ai-content strong { color: #fbbf24; }
+        body { background-color: #050505; background-image: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%); color: #d1d5db; }
+        .gold-gradient-text { background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #fbbf24 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(212, 175, 55, 0.15); }
+        .gold-border-gradient { position: relative; background: linear-gradient(135deg, #121212, #0a0a0a); border: 1px solid rgba(212, 175, 55, 0.3); }
+        /* 核心：让机器人吐出的内容自动变漂亮 */
+        #ai-content h3 { color: #fbbf24; font-size: 1.25rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: block; }
+        #ai-content p { margin-bottom: 0.8rem; line-height: 1.8; color: #9ca3af; }
+        #ai-content strong { color: #fff; font-weight: 600; }
     </style>
 </head>
-<body class="p-6 md:p-12 font-sans">
-    <header class="max-w-5xl mx-auto mb-12">
-        <h1 class="text-4xl md:text-6xl font-serif font-black text-white">
-            大头的 <span class="gold-gradient-text">AI 深度内参</span>
-        </h1>
+<body class="p-6 md:p-16 font-sans antialiased">
+    <header class="max-w-6xl mx-auto mb-16 flex justify-between items-end">
+        <div>
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-1 h-8 bg-gold-500 rounded-full"></div>
+                <span class="text-gold-500 text-sm tracking-widest uppercase font-bold">Daily Intelligence</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-serif font-black text-white">大头的 <span class="gold-gradient-text">AI 深度内参</span></h1>
+        </div>
+        <div class="text-right hidden md:block">
+            <div class="px-4 py-2 glass-card rounded-full text-gold-400 text-xs mb-2">LIVE UPDATE</div>
+            <div class="text-gray-600 font-mono text-sm">2026.02.01</div>
+        </div>
     </header>
 
-    <main class="max-w-5xl mx-auto">
-        <section class="glass-card rounded-2xl p-8 mb-12">
-            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <span class="w-1 h-6 bg-gold-500"></span> 今日核心摘要
-            </h2>
-            <div id="ai-content" class="text-lg leading-relaxed text-gray-300">
+    <main class="max-w-6xl mx-auto space-y-12">
+        <section class="gold-border-gradient rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-8">
+                    <h2 class="text-3xl font-bold text-white font-serif">今日深度洞察</h2>
                 </div>
+                
+                <div id="ai-content" class="space-y-6 text-lg leading-relaxed font-light">
+                    </div>
+            </div>
         </section>
+
+        <footer class="pt-12 border-t border-white/5 flex justify-between text-gray-600 text-xs tracking-widest uppercase font-medium">
+            <span>Powered by Agent Swarm</span>
+            <span>Update Every 24H</span>
+        </footer>
     </main>
 </body>
 </html>
-</html>
-
-
