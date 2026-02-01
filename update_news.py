@@ -22,17 +22,20 @@ def get_ai_news():
     return completion.choices[0].message.content
 
 def update_html(news_content):
-    # 3. 读取现有的 HTML 并进行“灵魂注入”
+    # 3. 读取现有的 HTML 模板
     with open("index.html", "r", encoding="utf-8") as f:
         html = f.read()
     
-    # 简单的逻辑：这里会根据 AI 返回的内容更新网页
-    # 为了演示，我们将 AI 的返回结果直接作为一个注释或部分替换
-    # 在实际运行中，脚本会自动定位你的 HTML 标签进行精准替换
-    updated_html = html.replace("", news_content)
+    # 精准定位占位符，把新闻填进去
+    placeholder = ""
     
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(updated_html)
+    if placeholder in html:
+        updated_html = html.replace(placeholder, news_content)
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write(updated_html)
+        print("网页内容已精准更新！")
+    else:
+        print("错误：在 index.html 中没找到占位符 ")
 
 if __name__ == "__main__":
     print("开始获取今日 AI 情报...")
