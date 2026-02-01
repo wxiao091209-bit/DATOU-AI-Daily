@@ -27,7 +27,7 @@ def update_html(news_content):
         html = f.read()
     
     # 精准定位占位符，把新闻填进去
-    placeholder = ""
+    placeholder = "<!--AI_NEWS_HERE-->"
     
     if placeholder in html:
         updated_html = html.replace(placeholder, news_content)
