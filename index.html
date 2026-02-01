@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大头的 AI 深度内参</title>
+    <title>大头的 AI 深度内参 | 2026.02.01</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script>
@@ -121,15 +121,21 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s infinite;
-            color: #d4af37;
+        .news-item {
+            border-left: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        .news-item:hover {
+            border-left-color: #d4af37;
+            background: rgba(212, 175, 55, 0.05);
+            padding-left: 1rem;
+        }
+
+        .tag {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #d4af37;
         }
 
         .grid-pattern {
@@ -165,7 +171,7 @@
                         <div class="w-2 h-2 bg-gold-500 rounded-full animate-pulse-gold"></div>
                         <span class="text-gold-400 text-xs font-mono tracking-wider">LIVE UPDATE</span>
                     </div>
-                    <time class="text-gray-600 text-sm font-mono" id="current-date"></time>
+                    <time class="text-gray-600 text-sm font-mono">2026年2月1日 星期日</time>
                 </div>
             </div>
         </div>
@@ -192,15 +198,15 @@
                     <div class="space-y-4 text-lg md:text-xl leading-relaxed font-light text-gray-300">
                         <p class="flex gap-4 items-start hover:text-white transition-colors duration-300">
                             <span class="text-gold-500 font-serif text-2xl leading-none mt-1">01.</span>
-                            <span>OpenAI 发布 GPT-5 预览版，多模态推理能力实现质的飞跃，企业级 API 延迟降低 40%，引发全球开发者生态重构浪潮。</span>
+                            <span>Google DeepMind 发布 Gemini 2.5 Pro "Deep Think" 模式，在 LiveCodeBench 和 MMMU 推理基准测试中超越 OpenAI o3，标志着多模态推理能力进入新纪元。</span>
                         </p>
                         <p class="flex gap-4 items-start hover:text-white transition-colors duration-300">
                             <span class="text-gold-500 font-serif text-2xl leading-none mt-1">02.</span>
-                            <span>苹果 Vision Pro 2 代供应链曝光，采用 Micro-OLED 堆叠技术，中国硬件厂商在光学模组领域的市占率突破 65%。</span>
+                            <span>Nvidia Vera Rubin 下一代 AI 超级芯片平台正式启动量产，AMD 与 OpenAI 达成战略合作后者可收购至多 10% 股份，AI 硬件军备竞赛白热化。</span>
                         </p>
                         <p class="flex gap-4 items-start hover:text-white transition-colors duration-300">
                             <span class="text-gold-500 font-serif text-2xl leading-none mt-1">03.</span>
-                            <span>中国 AI 出海军团在中东与东南亚市场拿下巨额订单，本地化合规方案成为竞争壁垒，数据主权议题持续升温。</span>
+                            <span>CES 2026 中国展商占比近 25%，Unitree Robotics、AgiBot 等人形机器人开启全球商用部署，高盛预测 MSCI 中国指数将因 AI 出海浪潮上涨 20%。</span>
                         </p>
                     </div>
                 </div>
@@ -217,118 +223,193 @@
                 <span class="text-xs text-gray-600 uppercase tracking-widest">Categories</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
                 <!-- Category 1: Large Models -->
-                <article class="glass-card rounded-2xl p-6 cursor-pointer group">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                            </svg>
+                <article class="glass-card rounded-2xl p-6 md:p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">大模型动态</h4>
+                                <span class="text-xs text-gray-500">LLMs & Foundation Models</span>
+                            </div>
                         </div>
-                        <span class="text-xs text-gold-600 font-mono">12 条更新</span>
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono">3 条更新</span>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">大模型动态</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">GPT-5、Claude 4、Gemini Ultra 最新技术路线解析与商业化进展追踪。</p>
-                    <div class="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-xs text-gray-600">LLMs & Foundation Models</span>
-                        <div class="w-2 h-2 bg-gold-500 rounded-full animate-pulse"></div>
+
+                    <div class="space-y-4">
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">Google</span>
+                                <span class="text-gray-600 text-xs">2小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">Gemini 2.5 Pro "Deep Think" 击败 o3</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">Google 发布增强型推理模式，采用并行计算技术，在代码生成和多模态理解基准上首次超越 OpenAI o3 系列。</p>
+                        </div>
+
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">OpenAI</span>
+                                <span class="text-gray-600 text-xs">5小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">OpenAI 2026 年 IPO 估值达 $500B</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">据最新披露，OpenAI 预计年内上市，目标估值 5000 亿美元，并与 AMD 达成芯片供应及股权投资协议。</p>
+                        </div>
+
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">Video AI</span>
+                                <span class="text-gray-600 text-xs">8小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">Veo 3 结束视频生成"无声时代"</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">Google DeepMind 发布 Veo 3，首次实现视频与同步音频、对白生成，可直接理解像素内容自动配音效。</p>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Category 2: AI Hardware -->
-                <article class="glass-card rounded-2xl p-6 cursor-pointer group">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
-                            </svg>
+                <article class="glass-card rounded-2xl p-6 md:p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">AI 硬件</h4>
+                                <span class="text-xs text-gray-500">Chips & Robotics</span>
+                            </div>
                         </div>
-                        <span class="text-xs text-gold-600 font-mono">8 条更新</span>
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono">3 条更新</span>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">AI 硬件</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">芯片制程突破、端侧推理优化、人形机器人硬件平台供应链深度调研。</p>
-                    <div class="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-xs text-gray-600">Chips & Robotics</span>
-                        <div class="flex gap-1">
-                            <div class="w-1.5 h-1.5 bg-gold-500/50 rounded-full"></div>
-                            <div class="w-1.5 h-1.5 bg-gold-500 rounded-full"></div>
+
+                    <div class="space-y-4">
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">Nvidia</span>
+                                <span class="text-gray-600 text-xs">1小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">Vera Rubin 平台正式进入量产</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">黄仁勋在 CES 2026 宣布下一代 AI 超级芯片 Vera Rubin 开始生产，包含 6 款新芯片，性能较前代翻倍。</p>
+                        </div>
+
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">Storage Crisis</span>
+                                <span class="text-gray-600 text-xs">3小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">存储芯片价格暴涨 50-60%</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">AI 服务器需求激增导致全球 DRAM/NAND 危机，三星、SK 海力士优先供应 HBM，PC/手机存储成本翻倍。</p>
+                        </div>
+
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">Robotics</span>
+                                <span class="text-gray-600 text-xs">6小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">Boston Dynamics Atlas 2028 年商用</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">现代汽车宣布与 Google DeepMind 合作，Atlas 人形机器人将在乔治亚州工厂部署，2028 年目标年产 3 万台。</p>
                         </div>
                     </div>
                 </article>
 
                 <!-- Category 3: Global Expansion -->
-                <article class="glass-card rounded-2xl p-6 cursor-pointer group">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
+                <article class="glass-card rounded-2xl p-6 md:p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">出海动态</h4>
+                                <span class="text-xs text-gray-500">Global Markets</span>
+                            </div>
                         </div>
-                        <span class="text-xs text-gold-600 font-mono">6 条更新</span>
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono">3 条更新</span>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">出海动态</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">全球化合规策略、跨境数据治理、新兴市场（中东、拉美、东南亚）竞争格局。</p>
-                    <div class="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-xs text-gray-600">Global Markets</span>
-                        <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
+
+                    <div class="space-y-4">
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">CES 2026</span>
+                                <span class="text-gray-600 text-xs">4小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">中国展商占 CES 25% 份额</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">拉斯维加斯 CES 2026 数据显示中国企业占参展商近四分之一，在机器人和 AI 硬件领域从概念展示转向商用落地。</p>
+                        </div>
+
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">Humanoid</span>
+                                <span class="text-gray-600 text-xs">7小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">Unitree/AgiBot 开启全球商用</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">宇树科技、智元机器人等国内厂商在 CES 展示工业级人形机器人，面向物流和制造场景启动海外预售。</p>
+                        </div>
+
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">Investment</span>
+                                <span class="text-gray-600 text-xs">10小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">高盛：MSCI 中国指数看涨 20%</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">高盛预测 2026 年中国股票将上涨 20%，由 AI 技术出口和国际化扩张驱动，互联网与硬件板块预计盈利增长 20%。</p>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Category 4: Investment -->
-                <article class="glass-card rounded-2xl p-6 cursor-pointer group">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                            </svg>
+                <!-- Category 4: Investment & Policy -->
+                <article class="glass-card rounded-2xl p-6 md:p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">投融资与政策</h4>
+                                <span class="text-xs text-gray-500">VC & Regulations</span>
+                            </div>
                         </div>
-                        <span class="text-xs text-gold-600 font-mono">5 条更新</span>
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono">3 条更新</span>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">投融资追踪</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">顶级 VC 轮次解读、独角兽估值变动、并购案与 IPO  Pipeline 独家分析。</p>
-                    <div class="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-xs text-gray-600">VC & M&A</span>
-                    </div>
-                </article>
 
-                <!-- Category 5: Policy -->
-                <article class="glass-card rounded-2xl p-6 cursor-pointer group">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
-                            </svg>
+                    <div class="space-y-4">
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">M&A</span>
+                                <span class="text-gray-600 text-xs">2小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">Mobileye 9 亿美元收购 Mentee</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">英特尔旗下 Mobileye 收购人形机器人初创 Mentee Robotics，押注自动驾驶感知技术向具身智能迁移。</p>
                         </div>
-                        <span class="text-xs text-gold-600 font-mono">4 条更新</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">监管与政策</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">中美欧 AI 法案进展、算力出口管制动态、数据跨境流动新规影响评估。</p>
-                    <div class="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-xs text-gray-600">Regulations</span>
-                    </div>
-                </article>
 
-                <!-- Category 6: Applications -->
-                <article class="glass-card rounded-2xl p-6 cursor-pointer group">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="category-icon w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">AMD</span>
+                                <span class="text-gray-600 text-xs">5小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">AMD 与 OpenAI 股权级合作</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">AMD 与 OpenAI 达成芯片供应协议，后者获得收购 AMD 至多 10% 股份的期权，打破 Nvidia 独家供应格局。</p>
                         </div>
-                        <span class="text-xs text-gold-600 font-mono">9 条更新</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">应用落地</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">AI Coding、Agent Workflow、垂直行业 SaaS 重构案例与 ROI 实证研究。</p>
-                    <div class="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
-                        <span class="text-xs text-gray-600">Enterprise AI</span>
-                        <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
+
+                        <div class="news-item pl-4 py-2 cursor-pointer group">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="tag px-2 py-0.5 rounded text-xs font-medium">Export Control</span>
+                                <span class="text-gray-600 text-xs">9小时前</span>
+                            </div>
+                            <h5 class="text-white font-semibold mb-1 group-hover:text-gold-400 transition-colors">中国订购 200 万片 H200 GPU</h5>
+                            <p class="text-sm text-gray-500 leading-relaxed">黄仁勋透露中国企业已下单超 200 万片 H200 芯片，总价值超 300 亿美元，正等待美国政府出口许可审批。</p>
+                        </div>
                     </div>
                 </article>
 
@@ -340,8 +421,9 @@
             <div class="luxury-divider mb-8"></div>
             <blockquote class="text-center max-w-3xl mx-auto">
                 <p class="text-xl md:text-2xl font-serif italic text-gray-400 leading-relaxed">
-                    "In the gold rush of AI, we don't sell shovels—we map the terrain."
+                    "The AI landscape of 2026 is defined not by models alone, but by the convergence of reasoning, hardware, and global deployment."
                 </p>
+                <cite class="text-gold-600 text-sm mt-4 block not-italic">— Agent Swarm Intelligence, Feb 1 2026</cite>
             </blockquote>
             <div class="luxury-divider mt-8"></div>
         </section>
@@ -359,28 +441,15 @@
                     </p>
                 </div>
                 <div class="flex items-center gap-6 text-xs text-gray-600">
-                    <span>Version 2.4.0</span>
+                    <span>Version 2.4.1</span>
                     <span class="w-1 h-1 bg-gray-700 rounded-full"></span>
-                    <span>Build timestamp: <span id="build-time"></span></span>
+                    <span>Last Update: 2026-02-01 08:00 CST</span>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Set current date
-        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('zh-CN', dateOptions);
-
-        // Set build timestamp
-        const now = new Date();
-        const timeString = now.getFullYear() + '-' + 
-                          String(now.getMonth() + 1).padStart(2, '0') + '-' + 
-                          String(now.getDate()).padStart(2, '0') + ' ' + 
-                          String(now.getHours()).padStart(2, '0') + ':' + 
-                          String(now.getMinutes()).padStart(2, '0');
-        document.getElementById('build-time').textContent = timeString;
-
         // Hover interactions for cards
         document.querySelectorAll('.glass-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
